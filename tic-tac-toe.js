@@ -64,14 +64,14 @@ function getWinConditions() {
 		arrayToAdd = [];
 	}
 
-	for (let m = 1; m <= numRows * numRows; m += numRows + 1){
+	for (let m = 1; m <= (numRows * numRows); m += parseInt(numRows) + 1){
 		arrayToAdd.push(m);
 	}
 	winConditions[wIndex] = arrayToAdd;
 	wIndex++;
 	arrayToAdd = [];
 
-	for (let m = numRows; m <= numRows * (numRows-1) + 1 ; m += numRows - 1){
+	for (let m = parseInt(numRows); m <= numRows * (numRows-1) + 1 ; m += numRows - 1){
 		arrayToAdd.push(m);
 	}
 	winConditions[wIndex]=arrayToAdd;
@@ -109,6 +109,9 @@ function setBoxBorders(){
 }
 
 function checkGameEnd(){
+	console.log(filledSpaces);
+	console.log(numRows * numRows);
+	
 	if (filledSpaces == numRows * numRows){
 		return 2;
 	}
@@ -136,6 +139,7 @@ function endGame(flag) {
 }
 
 function resetGame(){
+	filledSpaces = 0
 	currentPlayer = (Math.floor(Math.random()*2) == 0)? Player1 : Player2;
 	createGameBoard();
 	setBoxBorders();
