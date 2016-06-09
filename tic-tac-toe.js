@@ -136,6 +136,7 @@ function endGame(flag) {
 }
 
 function resetGame(){
+	filledSpaces = 0;
 	currentPlayer = (Math.floor(Math.random()*2) == 0)? Player1 : Player2;
 	createGameBoard();
 	setBoxBorders();
