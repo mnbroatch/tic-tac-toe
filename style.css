@@ -56,10 +56,12 @@ table {
 }
 
 #change-player-one-name-area {
+	padding-left:20px;
 	float:left;
 }
 
 #change-player-two-name-area {
+	padding-right:20px;
 	float:right;
 }
 
